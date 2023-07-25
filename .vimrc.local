@@ -1,0 +1,8 @@
+" Enable auto commands
+augroup MakeAutomatically
+  autocmd!
+
+  " When saving a .c file, trigger the :make %< command
+  autocmd BufWritePost *.c :execute 'make' shellescape(expand('%:r'))
+augroup END
+
